@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Engmu
 {
-    public static class BitmapExtension
+    public static class eBitmap
     {
         public static Image<Gray, byte> Grayscale(this Bitmap bm)
         {

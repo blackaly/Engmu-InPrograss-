@@ -12,6 +12,9 @@ using Emgu;
 using Emgu.CV;
 using Emgu.CV.UI;
 using Engmu;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
+using Engmu.Model;
 
 namespace Engmu
 {
@@ -64,15 +67,16 @@ namespace Engmu
                 imageBox2.Image = null;
             }
 
-            var _img = img.Clone();
+            var _img = new Bitmap(img.ToBitmap());
 
             imageBox2.Image = await Task.Run(() => {
-               return _img.ToBitmap().Split('r');
+                return img.ToBitmap().Split('r');
             });
 
-        }
 
-        private async void greenToolStripMenuItem_Click(object sender, EventArgs e)
+    }
+
+    private async void greenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (imageBox2.Image != null)
             {
@@ -99,6 +103,20 @@ namespace Engmu
         {
             More m = new More();
             m.Show();
+        }
+
+        private async void blurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (imageBox2.Image != null)
+            {
+                imageBox2.Image = null;
+            }
+
+            var _img = new Bitmap(img.ToBitmap());
+
+            imageBox2.Image = await Task.Run(() => {
+                return new Masking().Mask(_img, 9, 9);
+            });
         }
     }
 }

@@ -73,6 +73,12 @@
     <Compile Include="Model\Extensions\eBitmap.cs" />
     <Compile Include="Model\Interfaces\IMask.cs" />
     <Compile Include="Model\Masking.cs" />
+    <Compile Include="View\CustomizeCanny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomizeCanny.Designer.cs">
+      <DependentUpon>CustomizeCanny.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\CustomizeCanny.resx">
+      <DependentUpon>CustomizeCanny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

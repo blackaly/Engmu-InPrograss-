@@ -15,6 +15,7 @@ using Engmu;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using Engmu.Model;
+using Engmu.View;
 
 namespace Engmu
 {
@@ -115,7 +116,45 @@ namespace Engmu
             var _img = new Bitmap(img.ToBitmap());
 
             imageBox2.Image = await Task.Run(() => {
-                return new Masking().Mask(_img, 9, 9);
+                return new Masking().BlurMask(_img, 9, 9);
+            });
+        }
+
+        private async void sobelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (imageBox2.Image != null)
+            {
+                imageBox2.Image = null;
+            }
+
+            var _img = new Bitmap(img.ToBitmap());
+
+            imageBox2.Image = await Task.Run(() => {
+                return new Masking().SobelMask(_img);
+            });
+
+        }
+
+        private void customizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomizeCanny canny = new CustomizeCanny(this);
+            canny.Show();
+        }
+
+        public async void CannyCusomized(double tresh, double threshLindking)
+        {
+            if (imageBox2.Image != null)
+            {
+                imageBox2.Image = null;
+            }
+
+            var _img = new Bitmap(img.ToBitmap());
+
+            imageBox2.Image = await Task.Run(() => {
+                Image<Gray, byte> m = new Masking().SobelMask(_img, tresh, threshLindking);
+                if (m == null) return null;
+
+                return  m;
             });
         }
     }

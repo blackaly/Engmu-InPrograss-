@@ -15,7 +15,7 @@ namespace Engmu.Model
 {
     public class Masking : IMask
     {
-        public Image<Bgra, byte> Mask(Bitmap bm, int maskWidth, int maskHeight)
+        public Image<Bgra, byte> BlurMask(Bitmap bm, int maskWidth, int maskHeight)
         {
             if (bm == null) return null;
             if (maskWidth % 2 == 0 && maskHeight % 2 == 0) return null;
@@ -69,6 +69,18 @@ namespace Engmu.Model
 
 
         }
+        public Image<Gray, byte> SobelMask(Bitmap bm, double thresh=50, double threshLinking=100)
+        {
+            if (bm == null) return null;
 
+            Image<Gray, byte> ImageCanny = new Image<Gray, byte>(bm.Width, bm.Height, new Gray(0));
+
+            ImageCanny = bm.ToImage<Bgra, byte>().Canny(thresh, threshLinking);
+
+            if(ImageCanny == null) return null;
+
+            return ImageCanny;
+            
+        }
     }
 }

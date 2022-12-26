@@ -42,6 +42,8 @@
             this.imageBox2 = new Emgu.CV.UI.ImageBox();
             this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
@@ -139,7 +141,8 @@
             // filtersToolStripMenuItem
             // 
             this.filtersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.blurToolStripMenuItem});
+            this.blurToolStripMenuItem,
+            this.sobelToolStripMenuItem});
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
             this.filtersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.filtersToolStripMenuItem.Text = "Filters";
@@ -150,6 +153,22 @@
             this.blurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.blurToolStripMenuItem.Text = "Blur";
             this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
+            // 
+            // sobelToolStripMenuItem
+            // 
+            this.sobelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customizeToolStripMenuItem});
+            this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
+            this.sobelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sobelToolStripMenuItem.Text = "Sobel";
+            this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
+            // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Text = "Customize";
+            this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -183,6 +202,8 @@
         private System.Windows.Forms.ToolStripMenuItem moreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
     }
 }
 

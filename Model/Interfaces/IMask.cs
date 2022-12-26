@@ -11,7 +11,9 @@ namespace Engmu.Model.Interfaces
 {
     public interface IMask
     {
-        Image<Bgra, byte> Mask(Bitmap bm, int maskWidth, int maskHeight);
+        Image<Bgra, byte> BlurMask(Bitmap bm, int maskWidth, int maskHeight);
+        Image<Gray, byte> SobelMask(Bitmap bm, double thresh, double threshLinking);
+
 
     }
 }

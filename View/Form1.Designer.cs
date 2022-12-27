@@ -38,12 +38,12 @@
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
@@ -67,7 +67,7 @@
             this.moreToolStripMenuItem,
             this.filtersToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 114);
             // 
             // toolStripMenuItem1
             // 
@@ -112,6 +112,7 @@
             this.binrayToolStripMenuItem.Name = "binrayToolStripMenuItem";
             this.binrayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.binrayToolStripMenuItem.Text = "Binarization";
+            this.binrayToolStripMenuItem.Click += new System.EventHandler(this.binrayToolStripMenuItem_Click);
             // 
             // moreToolStripMenuItem
             // 
@@ -119,6 +120,38 @@
             this.moreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.moreToolStripMenuItem.Text = "More";
             this.moreToolStripMenuItem.Click += new System.EventHandler(this.moreToolStripMenuItem_Click);
+            // 
+            // filtersToolStripMenuItem
+            // 
+            this.filtersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.blurToolStripMenuItem,
+            this.sobelToolStripMenuItem});
+            this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
+            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.filtersToolStripMenuItem.Text = "Filters";
+            // 
+            // blurToolStripMenuItem
+            // 
+            this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
+            this.blurToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.blurToolStripMenuItem.Text = "Blur";
+            this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
+            // 
+            // sobelToolStripMenuItem
+            // 
+            this.sobelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customizeToolStripMenuItem});
+            this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
+            this.sobelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sobelToolStripMenuItem.Text = "Canny";
+            this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
+            // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.customizeToolStripMenuItem.Text = "Customize";
+            this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -137,38 +170,6 @@
             this.imageBox2.Size = new System.Drawing.Size(327, 345);
             this.imageBox2.TabIndex = 4;
             this.imageBox2.TabStop = false;
-            // 
-            // filtersToolStripMenuItem
-            // 
-            this.filtersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.blurToolStripMenuItem,
-            this.sobelToolStripMenuItem});
-            this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
-            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.filtersToolStripMenuItem.Text = "Filters";
-            // 
-            // blurToolStripMenuItem
-            // 
-            this.blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            this.blurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.blurToolStripMenuItem.Text = "Blur";
-            this.blurToolStripMenuItem.Click += new System.EventHandler(this.blurToolStripMenuItem_Click);
-            // 
-            // sobelToolStripMenuItem
-            // 
-            this.sobelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem});
-            this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
-            this.sobelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sobelToolStripMenuItem.Text = "Sobel";
-            this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customizeToolStripMenuItem.Text = "Customize";
-            this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
             // 
             // Form1
             // 

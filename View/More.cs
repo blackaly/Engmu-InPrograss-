@@ -1,4 +1,5 @@
 ﻿using Emgu.CV;
+using Engmu.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,23 @@ namespace Engmu
 {
     public partial class More : Form
     {
-        public More()
+        Form1 form;
+        public More(Form1 f)
         {
             InitializeComponent();
+            form = f;
         }
 
         private void histogramButton_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
 
+            if(form.img != null)
+            {
+                HistogramDetails h = new HistogramDetails(form.img.ToBitmap());
+                h.Show();
+            }
 
+            /*
             if(form.img != null)
             {
                 int[] img_R = new int[256];
@@ -45,7 +53,7 @@ namespace Engmu
                     }
                 }
 
-            }
+            }*/
 
 
 

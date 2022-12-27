@@ -102,7 +102,7 @@ namespace Engmu
 
         private void moreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            More m = new More();
+            More m = new More(this);
             m.Show();
         }
 
@@ -155,6 +155,20 @@ namespace Engmu
                 if (m == null) return null;
 
                 return  m;
+            });
+        }
+
+        private async void binrayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (imageBox2.Image != null)
+            {
+                imageBox2.Image = null;
+            }
+
+            var _img = new Bitmap(img.ToBitmap());
+
+            imageBox2.Image = await Task.Run(() => {
+                return _img.Binarization().ToImage<Gray, byte>();
             });
         }
     }
